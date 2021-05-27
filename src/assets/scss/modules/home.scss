@@ -1,0 +1,579 @@
+@import '../library/variables.scss';
+
+.module.home-module {
+  @media screen and (min-width: $tablet) and(max-width: $minpc) {
+    & {
+      .nav-bar {
+        .app-logo {
+          font-size: 1vw;
+        }
+      }
+
+      .layout-module {
+        .left-bar {
+          width: 25%;
+        }
+
+        .main-container {
+          width: 48%;
+
+          .welcome-start {
+            margin-top: -1em;
+            .primary-text {
+              display: none;
+            }
+
+            h2 {
+              font-size: 2em;
+            }
+          }
+
+          .start-call-action {
+            padding-left: 4em;
+            padding-right: 4em;
+            flex-direction: column-reverse;
+
+            .primary-btn {
+              margin-left: 0;
+              margin-bottom: 1em;
+            }
+          }
+
+          .games {
+            margin-top: 4em;
+            grid-template-columns: repeat(1, 1fr);
+
+            .game-item {
+              padding: 4em;
+            }
+          }
+        }
+
+        .right-bar {
+          width: 27%;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $mobile) and (max-width: $tablet) {
+    & .layout-module {
+      flex-direction: column;
+
+      .left-bar {
+        width: 100%;
+        margin-top: -2em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+
+        .app-status {
+          display: flex;
+          padding-left: 8em !important;
+          padding-top: 0;
+          font-size: 1.8vw;
+        }
+
+        .left-bar-general-information {
+          display: none;
+        }
+      }
+
+      .main-container {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+
+        .welcome-start {
+          margin-top: -1em;
+          .primary-text {
+            display: none;
+          }
+
+          h2 {
+            font-size: 2em;
+          }
+        }
+
+        .start-call-action {
+          flex-direction: column-reverse;
+          align-items: center;
+
+          button {
+            width: 60%;
+          }
+
+          .primary-btn {
+            margin-left: 0;
+            margin-bottom: 1em;
+          }
+        }
+
+        .games {
+          grid-column-gap: 2em;
+          grid-row-gap: 2em;
+          margin-top: 8em;
+        }
+      }
+
+      .right-bar {
+        width: 100%;
+        margin-top: 5em;
+
+        .feature {
+          position: absolute;
+          top: 60em;
+          font-size: 1.8vw;
+          right: 10em;
+        }
+
+        .account-data {
+          margin-top: 0em;
+          padding: 4em;
+        }
+
+        .featured-users {
+          button.light-btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    & .layout-module {
+      padding-top: 2em;
+      flex-direction: column;
+
+      .left-bar {
+        width: 100%;
+        margin-top: -2em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+
+        .app-status {
+          display: flex;
+          padding-top: 0;
+          padding-right: 1em;
+          font-size: 2vw;
+        }
+
+        .left-bar-general-information {
+          display: none;
+        }
+      }
+
+      .main-container {
+        width: 100%;
+        padding-left: 0em;
+        padding-right: 0em;
+
+        .welcome-start {
+          margin-top: 1em;
+          .primary-text {
+            display: none;
+          }
+
+          h2 {
+            font-size: 2em;
+          }
+        }
+
+        .start-call-action {
+          flex-direction: column-reverse;
+          align-items: center;
+          margin-top: 3em;
+
+          button {
+            width: 80%;
+          }
+
+          .primary-btn {
+            margin-left: 0;
+            margin-bottom: 1.5em;
+          }
+        }
+
+        .games {
+          margin-top: 4em;
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+      .right-bar {
+        width: 100%;
+
+        .feature {
+          position: absolute;
+          top: 67em;
+          font-size: 2.5vw;
+          right: 4em;
+        }
+
+        .featured-users {
+          button.light-btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .layout-module {
+    animation: layout_module_transition 2s;
+
+    @keyframes layout_module_transition {
+      0% {
+        opacity: 0;
+        backface-visibility: hidden;
+        transform: translate(0, 5em) translateZ(0);
+      }
+
+      50% {
+        opacity: 1;
+        backface-visibility: hidden;
+        transform: translate(0, 0em) translateZ(0);
+      }
+    }
+  }
+
+  .left-bar {
+    width: 20%;
+    .app-status {
+      padding: 4em;
+      padding-top: 2em;
+      border-radius: 2em;
+
+      .count {
+        font-size: 3.5em;
+      }
+    }
+
+    .game-rounds {
+      font-family: $primary_font;
+      .round {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2em;
+
+        img {
+          width: 2em;
+          height: 2em;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .name {
+          max-width: 100%;
+        }
+
+        .church {
+          max-width: 15em;
+        }
+      }
+    }
+
+    .left-bar-general-information {
+      background-color: $extra_light_gray;
+      padding: 3em;
+      padding-top: 4em;
+      padding-bottom: 4em;
+      border-radius: 2em;
+    }
+  }
+
+  .main-container {
+    width: 60%;
+    padding-left: 5em;
+    padding-right: 5em;
+
+    .welcome-start {
+      text-align: center;
+
+      h1 {
+        display: flex;
+        align-items: center;
+        font-size: 4.8em;
+        font-family: $second_font;
+        transition: all 0.2s;
+      }
+
+      h2 {
+        font-size: 3em;
+        font-family: $primary_font;
+      }
+
+      .primary-text {
+        width: 5.2em;
+        margin-right: 0.2em;
+        animation: welcome_start_span_transition 60s infinite;
+        animation-delay: 30.2s;
+
+        @keyframes welcome_start_span_transition {
+          .5% {
+            opacity: 0;
+            width: 5.2em;
+            height: 0em;
+          }
+
+          1% {
+            opacity: 0;
+            width: 0em;
+            height: 0em;
+          }
+
+          10% {
+            opacity: 0;
+            width: 0em;
+            height: 0em;
+          }
+          10.5% {
+            opacity: 0;
+            width: 5.2em;
+          }
+          11% {
+            opacity: 1;
+            width: 5.2em;
+          }
+        }
+      }
+
+      .name-box {
+        margin-left: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 0;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+
+        background-color: $yellow;
+        animation: welcome_start_name_box_transition 60s infinite;
+        animation-delay: 31s;
+
+        .general-icon {
+          font-size: 2em;
+          color: $white;
+        }
+
+        @keyframes welcome_start_name_box_transition {
+          0% {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            position: absolute;
+          }
+          .3% {
+            width: 7em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0);
+            position: relative;
+          }
+          2.5% {
+            width: 7em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0);
+            position: relative;
+          }
+          3% {
+            width: 5em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0) rotate(90deg);
+            position: relative;
+          }
+          3.9% {
+            width: 5em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0) rotate(90deg);
+            position: relative;
+          }
+          4.4% {
+            width: 7em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0);
+            position: relative;
+          }
+          4.9% {
+            width: 7em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0);
+            position: relative;
+          }
+          5.2% {
+            width: 5em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0) rotate(-90deg);
+            position: relative;
+          }
+          5.6% {
+            width: 5em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0) rotate(-90deg);
+            position: relative;
+          }
+          5.8% {
+            width: 7em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0);
+            position: relative;
+          }
+          6.2% {
+            width: 7em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0);
+            position: relative;
+          }
+          6.4% {
+            width: 7em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(0.9) translateZ(0);
+            position: relative;
+          }
+          6.6% {
+            width: 7em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0);
+            position: relative;
+          }
+          8% {
+            width: 7em;
+            height: 5em;
+            opacity: 1;
+            backface-visibility: hidden;
+            transform: scale(1.1) translateZ(0);
+            position: relative;
+          }
+
+          10.5% {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            backface-visibility: hidden;
+            transform: scale(0) translateZ(0);
+            position: absolute;
+          }
+        }
+      }
+    }
+
+    .start-call-action {
+      display: flex;
+      justify-content: center;
+    }
+
+    .games {
+      margin-top: 6em;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 3em;
+      grid-row-gap: 3em;
+      animation: games_home_module_transition 2s;
+
+      .game-item {
+        padding: 3em;
+        display: flex;
+        justify-content: space-between;
+        font-family: $primary_font;
+        background-color: $white;
+        box-shadow: 0 10px 30px 0 #5865791c;
+        border-radius: 2em;
+      }
+
+      @keyframes games_home_module_transition {
+        0% {
+          opacity: 0;
+          backface-visibility: hidden;
+          transform: translate(0, 5em) translateZ(0);
+        }
+
+        50% {
+          opacity: 1;
+          backface-visibility: hidden;
+          transform: translate(0, 0em) translateZ(0);
+        }
+      }
+    }
+  }
+
+  .right-bar {
+    width: 20%;
+    .feature {
+      img {
+        width: 12em;
+        backface-visibility: hidden;
+        transform: rotate(10deg) translateZ(0);
+
+        animation-name: right_bar_feature_transition;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        transition-timing-function: linear;
+
+        @keyframes right_bar_feature_transition {
+          50% {
+            backface-visibility: hidden;
+            transform: translate(1em, -5em) rotate(-20deg) translateZ(0);
+          }
+        }
+      }
+    }
+
+    .account-data {
+      padding: 3em;
+      border-radius: 2em;
+      background-color: $white;
+      box-shadow: $shadow1;
+    }
+
+    .featured-users {
+      font-family: $primary_font;
+      .featured-user {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2em;
+
+        img {
+          width: 2em;
+          height: 2em;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .name {
+          max-width: 10em;
+        }
+
+        .church {
+          max-width: 15em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,482 @@
+.module {
+  @media screen and (min-width: $tablet) and(max-width: $minpc) {
+    & {
+      .layout-module {
+        padding-left: 3em !important;
+        padding-right: 3em !important;
+      }
+    }
+  }
+
+  @media screen and (min-width: $mobile) and(max-width: $tablet) {
+    & {
+      .layout-module {
+        padding-left: 2em !important;
+        padding-right: 2em !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    & {
+      .layout-module {
+        padding-left: 2em !important;
+        padding-right: 2em !important;
+      }
+    }
+  }
+
+  .layout-module {
+    padding-top: 4em;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 5em;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.nav-bar {
+  width: 100%;
+  height: 8.5em;
+
+  @media screen and (min-width: $tablet) and(max-width: $minpc) {
+    & {
+      .nav-bar-child {
+        padding-left: 3em !important;
+        padding-right: 3em !important;
+      }
+    }
+  }
+
+  @media screen and (min-width: $mobile) and (max-width: $tablet) {
+    & {
+      .app-logo {
+        display: none;
+      }
+
+      .nav-bar-child {
+        padding-left: 2em !important;
+        padding-right: 2em !important;
+
+        #menu-btn {
+          display: block !important;
+        }
+
+        .logo {
+          display: none;
+        }
+
+        .nav-bar-child-options {
+          display: none;
+        }
+
+        button.btn.second-btn.circle-btn.icon-btn {
+          font-size: 2vw;
+        }
+      }
+
+      &.fixed-nav {
+        & + .notification-bar .notification-bar-body {
+          margin-right: 0em !important;
+          width: 60% !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    & {
+      height: 6em !important;
+      .app-logo {
+        display: none;
+      }
+
+      .nav-bar-child {
+        height: 6em !important;
+        padding-right: 2em !important;
+        padding-left: 2em !important;
+
+        #menu-btn {
+          display: block !important;
+        }
+
+        .logo {
+          display: none;
+        }
+
+        .nav-bar-child-options {
+          display: none;
+        }
+
+        button.btn.second-btn.circle-btn.icon-btn {
+          font-size: 2.5vw;
+        }
+      }
+
+      &.fixed-nav + .notification-bar .notification-bar-body {
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+  .app-logo {
+    position: absolute;
+    .banner {
+      position: absolute;
+      top: -20em;
+      left: -3em;
+      height: 30em;
+      width: 30em;
+      background: linear-gradient(269deg, $purple 0%, #be85ff 100%);
+      border-radius: 1em;
+
+      .line-banner {
+        position: absolute;
+        width: 2em;
+        height: 8em;
+        bottom: 3em;
+        right: -3em;
+        background-color: $yellow;
+        border-radius: 0.3em;
+        box-shadow: $shadow4;
+
+        animation: line_banner_transition 7s;
+
+        @keyframes line_banner_transition {
+          0% {
+            bottom: 8em;
+          }
+          25% {
+            bottom: 3em;
+          }
+        }
+      }
+
+      .box-banner {
+        position: absolute;
+        width: 5em;
+        height: 5em;
+        bottom: -1em;
+        right: 1em;
+        background-color: $yellow;
+        box-shadow: $shadow4;
+        border-radius: 0.5em;
+
+        animation: box_banner_transition 7s;
+
+        @keyframes box_banner_transition {
+          0% {
+            bottom: -6em;
+          }
+          25% {
+            bottom: -1em;
+          }
+        }
+      }
+
+      .circle-banner {
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(269deg, $purple 0%, #be85ff 100%);
+        box-shadow: $shadow4;
+
+        &.circle1 {
+          bottom: -2em;
+          right: -5em;
+          height: 3em;
+          width: 3em;
+
+          animation: circle1_banner_transition 3s;
+
+          @keyframes circle1_banner_transition {
+            0% {
+              bottom: -4em;
+            }
+            25% {
+              bottom: -2em;
+            }
+          }
+        }
+
+        &.circle2 {
+          bottom: 1em;
+          right: -8em;
+          height: 2em;
+          width: 2em;
+
+          animation: circle2_banner_transition 3s;
+
+          @keyframes circle2_banner_transition {
+            0% {
+              bottom: -2em;
+            }
+            25% {
+              bottom: 1em;
+            }
+          }
+        }
+      }
+    }
+    h1 {
+      position: relative;
+      margin-top: 1.5em;
+      margin-left: 2em;
+      font-size: 2em;
+      font-family: $primary_font;
+      color: $white;
+      font-weight: $bold;
+
+      animation: h1_transition 8s;
+
+      @keyframes h1_transition {
+        0% {
+          margin-left: -1.5em;
+        }
+        25% {
+          margin-left: 2em;
+        }
+      }
+    }
+  }
+
+  .nav-bar-child {
+    height: 8.5em;
+    padding: 2em;
+    padding-left: 5em;
+    padding-right: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: $nav_index;
+
+    #menu-btn {
+      display: none;
+    }
+  }
+
+  &.fixed-nav {
+    .nav-bar-child {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 7.5em;
+      box-shadow: $shadow5;
+      background-color: $white;
+
+      animation: fixed_nav_transition 1s;
+
+      @keyframes fixed_nav_transition {
+        0% {
+          margin-top: -2em;
+        }
+        25% {
+          margin-top: 0em;
+        }
+      }
+    }
+
+    & + .notification-bar .notification-bar-body {
+      position: fixed;
+      margin-top: -3em;
+      margin-right: -1em;
+      &.isActive {
+        margin-top: -0.5em;
+      }
+    }
+  }
+}
+
+.notification-bar {
+  left: 0;
+  padding-right: 9em;
+  margin-top: -1.7em;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+
+  @media screen and (min-width: $tablet) and(max-width: $minpc) {
+    & {
+      padding-right: 5em !important;
+      .notification-bar-body {
+        height: 73vh !important;
+
+        .notification-bar-body-child {
+          height: 56vh !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $mobile) and (max-width: $tablet) {
+    & {
+      padding-right: 5em;
+      margin-top: -1em;
+
+      .notification-bar-body {
+        width: 29em !important;
+
+        .notification-bar-body-child {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    & {
+      padding: 2em;
+      justify-content: center !important;
+
+      .notification-bar-body {
+        height: 80vh !important;
+        width: 25em !important;
+
+        &.isActive {
+          margin-top: -1em !important;
+        }
+
+        .notification-bar-body-child {
+          width: 100% !important;
+          height: 63vh !important;
+        }
+      }
+    }
+  }
+
+  .notification-bar-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: $nav_index;
+  }
+
+  .notification-bar-body {
+    width: 28em;
+    height: 80vh;
+    padding: 2em;
+
+    border-radius: 2em;
+    background-color: $white;
+    box-shadow: $shadow2;
+    z-index: $nav_index;
+    overflow: hidden;
+
+    margin-top: -2em;
+    opacity: 0;
+
+    &.isActive {
+      margin-top: 0;
+      opacity: 1;
+      transition: all 0.15s;
+    }
+
+    .notification-bar-body-child {
+      width: 100%;
+      height: 62vh;
+      overflow: auto;
+
+      button.notification-item {
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        border: none;
+      }
+    }
+  }
+}
+
+.loading-process {
+  position: relative;
+  width: 100%;
+  height: 1.2em;
+  border-radius: 1em;
+  background-color: $white;
+  box-shadow: $shadow2;
+  overflow: hidden;
+
+  .loading-process-child {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(269deg, #8e35f9 0%, #be85ff 100%);
+    border-radius: 1em;
+
+    transition: width .8s;
+  }
+}
+
+.loading-bar {
+  position: relative;
+  width: 15em;
+  height: 0.5em;
+  border-radius: 1em;
+  background-color: $extra_light_gray;
+  overflow: hidden;
+
+  .loading-bar-child {
+    position: absolute;
+    width: 5em;
+    height: 100%;
+    background-color: $purple;
+    border-radius: 1em;
+    animation: loading_bar_transition 1s infinite;
+
+    @keyframes loading_bar_transition {
+      0% {
+        margin-left: 0;
+      }
+
+      100% {
+        margin-left: 15em;
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: $modal_index;
+
+  .modal-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #33283dbf;
+  }
+
+  .modal-content {
+    position: relative;
+    background-color: $white;
+    padding: 5em;
+    padding-top: 3em;
+    border-radius: 2em;
+    box-shadow: 0 5px 20px 0 #4f08c824;
+  }
+
+  &.min {
+    .modal-content {
+      min-width: 45em;
+      min-height: 25em;
+    }
+  }
+}
+
+//Modal Body
+

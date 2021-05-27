@@ -1,0 +1,119 @@
+@import "../library/variables.scss";
+
+.module.game-module {
+    // @media screen and (min-width: $tablet) and(max-width: $minpc) {
+    //     .layout-module {
+    //     }
+    // }
+
+    // @media screen and (min-width: $mobile) and (max-width: $tablet) {
+    //     .layout-module {
+    //     }
+    // }
+
+    // @media screen and (max-width: $mobile) {
+    //     .layout-module {
+    //     }
+    // }
+
+    .nav-bar {
+        .app-logo {
+            display: none;
+        }
+    }
+
+    .layout-module {
+        display: flex;
+        justify-content: center;
+        padding-top: 0em;
+
+        animation: layout_game_module_transition 2s;
+
+        @keyframes layout_game_module_transition {
+            0% {
+                opacity: 0;
+                backface-visibility: hidden;
+                transform: translate(6em, 0) translateZ(0);
+            }
+
+            50% {
+                opacity: 1;
+                backface-visibility: hidden;
+                transform: translate(0em, 0) translateZ(0);
+            }
+        }
+    }
+
+    .main-container {
+        width: 65%;
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+
+            .back {
+                margin-left: -1.4em;
+            }
+        }
+
+        .options-information {
+            display: flex;
+
+            .basic-options {
+                padding-top: 0.5em;
+                padding-right: 2em;
+                .welcome-start {
+                    font-size: 3em;
+                }
+
+                .name-input {
+                    width: 75%;
+                }
+
+                .basic-config {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 3em;
+                    grid-row-gap: 3em;
+                }
+            }
+
+            .basic-information {
+                width: 50%;
+                margin-left: 6em;
+                padding-top: 1em;
+
+                .game-options {
+                    padding: 3em;
+                    box-shadow: $shadow1;
+                    border-radius: 2em;
+                }
+
+                .game-social{
+                    padding: .5em;
+                }
+
+                .delete {
+                   padding: 3em;
+                   background-color: $extra_light_gray;
+                   border-radius: 2em;
+                }
+            }
+        }
+
+        .questions {
+            width: 60%;
+            .question {
+                .number {
+                    height: 5em;
+                    width: 5em;
+                    border: 0.2em solid $yellow;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

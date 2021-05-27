@@ -1,0 +1,192 @@
+@import "../library/variables.scss";
+
+.module.shop-module {
+    @media screen and (min-width: $tablet) and(max-width: $minpc) {
+        & {
+            .layout-module {
+                .left-bar {
+                    width: 35%;
+                    margin-left: -5em;
+                }
+                .main-container {
+                    width: 60%;
+                }
+
+                .right-bar {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $mobile) and (max-width: $tablet) {
+        .layout-module {
+            .left-bar {
+                display: none;
+            }
+
+            .main-container {
+                width: 100%;
+
+                .tab-options button p {
+                    display: none;
+                }
+            }
+
+            .right-bar {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        .layout-module {
+            .left-bar {
+                display: none;
+            }
+
+            .main-container {
+                width: 100%;
+
+                .tab-options button p {
+                    display: none;
+                }
+
+                .games {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+
+            .right-bar {
+                display: none;
+            }
+        }
+    }
+
+    .nav-bar {
+        .app-logo {
+            font-size: 0.8vw;
+            margin-top: -1em;
+
+            h1 {
+                margin-top: 2em;
+            }
+        }
+    }
+
+    .layout-module {
+        padding-top: 1em;
+        animation: layout_module_transition 2s;
+
+        @keyframes layout_module_transition {
+            0% {
+                opacity: 0;
+                backface-visibility: hidden;
+                transform: translate(0, 5em) translateZ(0);
+            }
+
+            50% {
+                opacity: 1;
+                backface-visibility: hidden;
+                transform: translate(0, 0em) translateZ(0);
+            }
+        }
+    }
+
+    .left-bar {
+        width: 25%;
+        padding-left: 0;
+        padding-right: 6em;
+        padding-top: 6.8em;
+
+        .left-bar-general-information {
+            background-color: $extra_light_gray;
+            padding: 3em;
+            padding-top: 4em;
+            padding-bottom: 4em;
+            border-radius: 2em;
+        }
+    }
+
+    .main-container {
+        width: 50%;
+
+        .tab-options {
+            button {
+                flex-direction: column;
+
+                p {
+                    margin-top: 0.5em;
+                }
+            }
+        }
+
+        .games {
+            margin-top: 3em;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 3em;
+            grid-row-gap: 3em;
+            animation: games_shop_module_transition 1.5s;
+
+            .game-item {
+                padding: 3em;
+                display: flex;
+                justify-content: space-between;
+                font-family: $primary_font;
+                box-shadow: 0 10px 30px 0 #5865791c;
+                border-radius: 2em;
+            }
+
+            @keyframes games_shop_module_transition {
+                0% {
+                    opacity: 0;
+                    backface-visibility: hidden;
+                    transform: translate(0, 5em) translateZ(0);
+                }
+
+                50% {
+                    opacity: 1;
+                    backface-visibility: hidden;
+                    transform: translate(0, 0em) translateZ(0);
+                }
+            }
+        }
+    }
+
+    .right-bar {
+        width: 15%;
+        margin-left: 5em;
+
+        .app-status {
+            padding: 4em;
+            padding-top: 6em;
+            border-radius: 2em;
+            display: flex;
+            justify-content: center;
+
+            .count {
+                font-size: 3.5em;
+            }
+        }
+
+        .feature {
+            margin-top: 7em;
+            img {
+                width: 12em;
+
+                animation-name: right_bar_feature_transition;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                transition-timing-function: linear;
+
+                @keyframes right_bar_feature_transition {
+                    50% {
+                        backface-visibility: hidden;
+                        transform: translate(1em, -5em) rotate(-20deg) translateZ(0);
+                    }
+                }
+            }
+        }
+    }
+}
